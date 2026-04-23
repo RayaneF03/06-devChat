@@ -13,7 +13,10 @@ const Join = () => {
     const socket = io("http://localhost:3001");
     socket.emit("set_username", username);
   };
-
+ const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
   return (
     <div>
       <h2>bem-vindo ao DevChat</h2>
@@ -23,7 +26,7 @@ const Join = () => {
         variant="container"
         onClick={() => handleSubmit()}
       >
-        Entrar
+        Enter
       </Button>
     </div>
   );
