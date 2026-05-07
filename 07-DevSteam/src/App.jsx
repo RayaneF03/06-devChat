@@ -1,4 +1,4 @@
-import "./App.css";
+import  "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Promocoes from "./components/Promocoes/Promocoes";
 import OutrosJogos from "./components/OutrosJogos/OutrosJogos";
@@ -16,4 +16,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

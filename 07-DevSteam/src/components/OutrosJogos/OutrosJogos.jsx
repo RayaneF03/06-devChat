@@ -54,6 +54,8 @@ export default function OutrosJogos() {
                 className={styles.img}
                 onError={(e) => {
                   e.target.style.background = "#344654";
+                  e.target.onerror = null;
+                  e.target.src = "/logo.svg";
                 }}
               />
             </div>
