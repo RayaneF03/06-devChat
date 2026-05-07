@@ -6,6 +6,8 @@ export default function Navbar({
   cartItems,
   removeFromCart,
 }) {
+  const formatPrice = (value) => `R$${value.toFixed(2).replace(".", ",")}`;
+  const toggleCart = () => setCartOpen((prev) => !prev);
   const total = cartItems.reduce((acc, item) => acc + item.price, 0);
 
   return (
@@ -22,10 +24,7 @@ export default function Navbar({
       </div>
 
       <div className={styles.right}>
-        <div
-          className={styles.cartWrapper}
-          onClick={() => setCartOpen(!cartOpen)}
-        >
+        <div className={styles.cartWrapper} onClick={toggleCart}>
           <svg
             className={styles.cartIcon}
             viewBox="0 0 24 24"
@@ -54,7 +53,7 @@ export default function Navbar({
                     <div className={styles.cartInfo}>
                       <span className={styles.cartName}>{item.name}</span>
                       <span className={styles.cartPrice}>
-                        R${item.price.toFixed(2).replace(".", ",")}
+                        {formatPrice(item.price)}
                       </span>
                       <button
                         className={styles.removeBtn}
@@ -68,9 +67,7 @@ export default function Navbar({
               </div>
               <div className={styles.cartTotal}>
                 <span>Total</span>
-                <span className={styles.totalValue}>
-                  R${total.toFixed(2).replace(".", ",")}
-                </span>
+                <span className={styles.totalValue}>{formatPrice(total)}</span>
               </div>
               <button className={styles.checkoutBtn}>FINALIZAR COMPRA</button>
             </div>

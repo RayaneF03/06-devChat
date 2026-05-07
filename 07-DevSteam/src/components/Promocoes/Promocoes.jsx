@@ -9,8 +9,8 @@ const promos = [
     name: "Coral Island",
     img: coralislandImg,
     originalPrice: 120.0,
-    price: 60.0,
-    discount: 50,
+    price: 102.0,
+    discount: 15,
   },
   {
     id: 2,

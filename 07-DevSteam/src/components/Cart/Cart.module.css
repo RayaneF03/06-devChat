@@ -10,10 +10,10 @@
 
 .cartPanel {
   position: fixed;
-  top: 64px;
+  top: 600px;
   right: -600px;
   width: 500px;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 600px);
   background: #171a21;
   border-left: 1px solid #344654;
   z-index: 101;
@@ -82,7 +82,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px;
+  padding: 40px;
   background: #2c3e50;
   border-radius: 4px;
   margin-bottom: 8px;
