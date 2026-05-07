@@ -4,20 +4,17 @@ const cartItems = [
   {
     id: 1,
     name: "League of Legends",
-    price: 99.9,
-    img: "https://cdn.cloudflare.steamstatic.com/steam/apps/2633200/header.jpg",
+    price: 99.9
   },
   {
     id: 2,
     name: "Dota 2",
-    price: 99.9,
-    img: "https://cdn.cloudflare.steamstatic.com/steam/apps/570/header.jpg",
+    price: 99.9
   },
   {
     id: 3,
     name: "Valorant",
-    price: 99.9,
-    img: "https://cdn.cloudflare.steamstatic.com/steam/apps/1234/header.jpg",
+    price: 99.9
   },
 ];
 
