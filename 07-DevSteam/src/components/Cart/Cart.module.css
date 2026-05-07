@@ -11,8 +11,8 @@
 .cartPanel {
   position: fixed;
   top: 64px;
-  right: -350px;
-  width: 350px;
+  right: -600px;
+  width: 500px;
   height: calc(100vh - 64px);
   background: #171a21;
   border-left: 1px solid #344654;
