@@ -32,7 +32,7 @@ const promos = [
 
 const fmt = (v) => `R$${v.toFixed(2).replace(".", ",")}`;
 
-export default function Promocoes() {
+export default function Promocoes({ addToCart }) {
   return (
     <div className={styles.section}>
       <h2 className={styles.title}>PROMOÇÕES</h2>
@@ -62,7 +62,19 @@ export default function Promocoes() {
                 <span className={styles.current}>{fmt(game.price)}</span>
               </div>
             </div>
-            <button className={styles.btn}>ADICIONAR AO CARRINHO 🛒</button>
+            <button
+              className={styles.btn}
+              onClick={() =>
+                addToCart({
+                  id: `${game.id}-${Date.now()}-${Math.random()}`,
+                  name: game.name,
+                  price: game.price,
+                  img: game.img,
+                })
+              }
+            >
+              ADICIONAR AO CARRINHO 🛒
+            </button>
           </div>
         ))}
       </div>

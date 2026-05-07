@@ -20,7 +20,7 @@
 .card {
   display: flex;
   align-items: center;
-  background: #2983aa;
+  background: #2f88b4;
   border-radius: 4px;
   overflow: hidden;
   transition: filter 0.2s;
@@ -75,7 +75,7 @@
 }
 
 .price {
-  color: #beeb14;
+  color: #c6eb13;
   font-size: 16px;
   font-weight: 700;
   white-space: nowrap;
@@ -83,7 +83,7 @@
 
 .btn {
   padding: 8px 14px;
-  background: #549300;
+  background: #5da000;
   color: #ffffff;
   border: none;
   border-radius: 4px;
@@ -96,5 +96,5 @@
 }
 
 .btn:hover {
-  background: #4c6b22;
+  background: #4f8400;
 }

@@ -13,7 +13,7 @@
 
 .grid {
   display: flex;
-  gap: 48px;
+  gap: 16px;
 }
 
 .card {
@@ -67,9 +67,11 @@
   font-size: 14px;
   font-weight: 700;
   padding: 8px 10px;
-  text-align: left;
+  text-align: center;
+  min-height: 40px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .priceRow {
