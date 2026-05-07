@@ -1,0 +1,114 @@
+.section {
+  padding: 32px 40px 24px;
+}
+
+.title {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 16px 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.grid {
+  display: flex;
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  background: #344654;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.card:first-child {
+  border-color: #2983AA;
+}
+
+.card:hover {
+  border-color: #BEEB14;
+  transform: translateY(-2px);
+}
+
+.imgWrapper {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  background: #171A21;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.badge {
+  background: #2983AA;
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  text-align: center;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: #344654;
+}
+
+.discount {
+  background: #BEEB14;
+  color: #171A21;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.prices {
+  display: flex;
+  flex-direction: column;
+}
+
+.original {
+  color: #A8A8A8;
+  font-size: 11px;
+  text-decoration: line-through;
+}
+
+.current {
+  color: #BEEB14;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.btn {
+  margin: 0 10px 10px;
+  padding: 8px 0;
+  background: #549300;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: #4C6B22;
+}

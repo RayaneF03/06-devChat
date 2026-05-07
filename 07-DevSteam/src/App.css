@@ -1,30 +1,10 @@
-:root {
-  --bg-dark: #171a21;
-  --bg-card: #344654;
-  --bg-item: #316282;
-  --gradient-1: #19587b;
-  --gradient-2: #2b87ae;
-  --blue-mid: #2983aa;
-  --blue-light: #4c6b22; /* verde escuro dos botões secundários */
-  --green-btn: #549300;
-  --green-neon: #beeb14;
-  --text-white: #ffffff;
-  --text-gray: #c7c7c7;
-  --text-muted: #a8a8a8;
-}
-
-body {
-  background-color: var(--bg-dark);
-  color: var(--text-white);
-  margin: 0;
-  font-family: sans-serif;
-}
-
 .app {
-  width: 100%;
   min-height: 100vh;
+  background: #171A21;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .content {
-  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
