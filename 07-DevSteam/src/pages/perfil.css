@@ -1,0 +1,239 @@
+/* Estilos do Perfil */
+.perfil-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.perfil-banner {
+  box-shadow: 0 10px 40px rgba(43, 135, 174, 0.2);
+  animation: slideDown 0.6s ease-out;
+}
+
+.perfil-card {
+  animation: fadeInUp 0.6s ease-out 0.2s backwards;
+}
+
+.perfil-tabs {
+  animation: fadeInUp 0.6s ease-out 0.3s backwards;
+}
+
+/* Animações */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(43, 135, 174, 0.5) !important;
+}
+
+/* Badges personalizadas */
+.badge {
+  padding: 0.5rem 1rem !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+/* Botões */
+.btn {
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2b87ae 0%, #1ba0d0 100%);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #1ba0d0 0%, #2b87ae 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(43, 135, 174, 0.3);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  border: none;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #45a049 0%, #4caf50 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+}
+
+/* Forms */
+.form-control {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  background-color: #333;
+  border-color: #2b87ae;
+  color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(43, 135, 174, 0.25);
+}
+
+.form-control::placeholder {
+  color: #999;
+}
+
+/* Avatar com efeito */
+.rounded-circle {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(43, 135, 174, 0.3);
+}
+
+.rounded-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(43, 135, 174, 0.5);
+}
+
+/* Gradient backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #2b87ae 0%, #4caf50 100%);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .perfil-banner {
+    min-height: 150px !important;
+  }
+
+  .perfil-card {
+    position: static !important;
+    margin-top: -50px;
+  }
+
+  .btn-group {
+    flex-wrap: wrap;
+  }
+
+  .btn-group .btn {
+    min-height: auto;
+  }
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2b87ae;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1ba0d0;
+}
+
+/* Transições suaves */
+* {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Cards com sombra */
+.card {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card:focus {
+  outline: none;
+}
+
+/* Texto com efeito */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0.5px;
+}
+
+/* Badge raro */
+.badge-raro {
+  background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.8);
+  }
+}
+
+/* Efeito de ripple no clique */
+.btn,
+.card,
+.badge {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilo para status online/offline */
+.status-indicator {
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0.6;
+  }
+}

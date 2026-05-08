@@ -1,12 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
 body {
   font-family: "Inter", sans-serif;
   background-color: #1b2838;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   color: #fff;
+  overflow-x: hidden;
+}
+
+main {
+  flex-grow: 1;
 }
 
 .buscar,
@@ -15,44 +27,58 @@ body {
   color: #d7d7d7;
 }
 
+.buscar:focus {
+  background-color: #2a475e;
+  color: #d7d7d7;
+  border: 1px solid #2b87ae !important;
+  outline: none;
+}
+
+/* ===== PROMOÇÕES ===== */
 .promoCard {
   width: 100%;
   max-width: 320px;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
   background: linear-gradient(to bottom, #19587b, #2b87ae);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
 }
 
 .promoCard:hover {
   transform: scale(1.03);
-}
-
-#itensPromo {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  box-shadow: 0 15px 30px rgba(43, 135, 174, 0.4);
 }
 
 .desconto {
   background-color: #4c6b22;
   color: #beeb14;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
 .corValor {
   color: #beeb14;
+  font-weight: 700;
+}
+
+#addCarrinho {
+  background-color: #4c6b22;
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease;
 }
 
 #addCarrinho:hover {
   background-color: #547625;
+  transform: translateY(-2px);
 }
 
 #addCarrinho:disabled {
   background-color: #4c6b22;
+  opacity: 0.6;
 }
 
-input.form-control:focus {
-  box-shadow: none;
-}
-
+/* ===== LOGIN PAGE ===== */
 .loginPage {
   background:
     radial-gradient(
@@ -66,11 +92,13 @@ input.form-control:focus {
       transparent 35%
     ),
     #1b2838;
+  min-height: 100vh;
 }
 
 .loginCard {
   background: #d9d9d9;
   border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .loginIcon {
@@ -81,6 +109,7 @@ input.form-control:focus {
   place-items: center;
   background: linear-gradient(145deg, #2b87ae, #19587b);
   color: #fff;
+  font-size: 1.5rem;
 }
 
 .loginTitle {
@@ -91,6 +120,7 @@ input.form-control:focus {
 
 .loginSubtitle {
   color: #4a5568;
+  font-size: 0.95rem;
 }
 
 .loginInputGroup .input-group-text {
@@ -108,9 +138,18 @@ input.form-control:focus {
   box-shadow: 0 0 0 0.2rem rgba(43, 135, 174, 0.2);
 }
 
+/* ===== GAME CARDS ===== */
 .gameCard {
   background: #2b87ae;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.gameCard:hover {
+  box-shadow: 0 10px 30px rgba(43, 135, 174, 0.3);
+  transform: translateY(-4px);
 }
 
 .gameCardImage {
@@ -118,18 +157,22 @@ input.form-control:focus {
   max-width: 360px;
   height: 170px;
   flex-shrink: 0;
+  object-fit: cover;
 }
 
 .carrinhoThumb {
   width: 120px;
   height: 56px;
   display: block;
+  object-fit: cover;
+  border-radius: 0.25rem;
 }
 
 .checkoutThumb {
   width: 100%;
   height: 72px;
   display: block;
+  object-fit: cover;
 }
 
 .gameCardBody {
@@ -140,6 +183,7 @@ input.form-control:focus {
   font-size: 2.05rem;
   line-height: 1.1;
   color: #f0f4f8;
+  font-weight: 700;
 }
 
 .gameCardSubtitle {
@@ -152,9 +196,18 @@ input.form-control:focus {
   color: #beeb14;
   font-size: 2.9rem;
   line-height: 1;
+  font-weight: 700;
 }
 
-@media (max-width: 992px) {
+input.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(43, 135, 174, 0.2);
+  border-color: #2b87ae;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) {
   .gameCardTitle {
     font-size: 1.5rem;
   }
@@ -162,12 +215,42 @@ input.form-control:focus {
   .gameCardPrice {
     font-size: 2.2rem;
   }
+
+  .gameCardImage {
+    max-width: 280px;
+    height: 130px;
+  }
+
+  .loginTitle {
+    font-size: 1.6rem;
+  }
+
+  .promoCard {
+    max-width: 100%;
+  }
 }
 
+/* Smartphone (576px - 767px) */
 @media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+  }
+
   .gameCardImage {
     max-width: 100%;
     height: 160px;
+  }
+
+  .gameCardTitle {
+    font-size: 1.25rem;
+  }
+
+  .gameCardPrice {
+    font-size: 1.5rem;
+  }
+
+  .gameCardSubtitle {
+    font-size: 0.9rem;
   }
 
   .carrinhoThumb {
@@ -179,7 +262,105 @@ input.form-control:focus {
     height: 64px;
   }
 
+  .loginCard {
+    border-radius: 0.75rem;
+  }
+
+  .loginTitle {
+    font-size: 1.4rem;
+  }
+
+  .loginIcon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.25rem;
+  }
+
+  .promoCard {
+    max-width: 100%;
+  }
+
+  .desconto {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile pequeno (< 576px) */
+@media (max-width: 575px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  .navbar {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem !important;
+  }
+
+  .gameCardImage {
+    height: 140px;
+  }
+
+  .gameCardTitle {
+    font-size: 1.1rem;
+  }
+
   .gameCardPrice {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
+  }
+
+  .gameCardSubtitle {
+    font-size: 0.8rem;
+  }
+
+  .gameCardBody {
+    min-height: 140px;
+  }
+
+  .carrinhoThumb {
+    width: 90px;
+    height: 42px;
+  }
+
+  .checkoutThumb {
+    height: 56px;
+  }
+
+  .loginIcon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.1rem;
+  }
+
+  .loginTitle {
+    font-size: 1.2rem;
+  }
+
+  .loginSubtitle {
+    font-size: 0.85rem;
+  }
+
+  .corValor {
+    font-size: 0.9rem;
+  }
+
+  #addCarrinho {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.85rem;
+  }
+}
+
+/* Modo horizontal muito pequeno */
+@media (max-height: 500px) {
+  .gameCard {
+    min-height: auto;
+  }
+
+  .gameCardBody {
+    min-height: auto;
   }
 }

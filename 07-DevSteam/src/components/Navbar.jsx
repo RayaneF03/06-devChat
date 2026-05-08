@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router";
 
 const Header = (props) => {
-  const [usuario, setUsuario] = useState(null);
-
-  useEffect(() => {
+  const [usuario, setUsuario] = useState(() => {
     const salvaUsuario = localStorage.getItem("devlogin");
-    salvaUsuario && setUsuario(JSON.parse(salvaUsuario));
-  }, []);
+    return salvaUsuario ? JSON.parse(salvaUsuario) : null;
+  });
 
   return (
     <header className="pt-4 w-100 navbar navbar-dark bg-dark justify-content-around align-items-center">
