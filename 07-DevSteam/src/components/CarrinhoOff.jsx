@@ -58,11 +58,13 @@ const CarrinhoOff = (props) => {
                 >
                   {/* Imagem do produto */}
                   <img
-                    className="object-fit-cover rounded-2"
+                    className="object-fit-cover rounded-2 carrinhoThumb"
                     src={item.imagem}
                     alt={item.titulo}
-                    width={60}
-                    height={80}
+                    width={120}
+                    height={56}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="w-100">
                     <div className="d-flex justify-content-between">

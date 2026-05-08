@@ -6,14 +6,12 @@ const OutrosJogos = (props) => {
     () => [
       {
         id: 1,
-        titulo: "Counter-Strike 2",
+        titulo: "Counter Strike: Global Offensive",
         preco: 0.0,
         desconto: 0,
         imagem:
           "https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg",
-        descricao:
-          "O clássico FPS competitivo retorna com gráficos renovados e jogabilidade ainda mais precisa. Perfeito para amantes de tiro tático.",
-        categoria: "FPS",
+        resumo: "Ação, Estratégia, Multijogador.",
       },
       {
         id: 2,
@@ -22,9 +20,7 @@ const OutrosJogos = (props) => {
         desconto: 20,
         imagem:
           "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
-        descricao:
-          "Explore Night City como um mercenário em um futuro distópico, com narrativa profunda e visuais impressionantes.",
-        categoria: "RPG de Ação",
+        resumo: "RPG de Ação, Mundo Aberto.",
       },
       {
         id: 3,
@@ -33,9 +29,7 @@ const OutrosJogos = (props) => {
         desconto: 35,
         imagem:
           "https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg",
-        descricao:
-          "Uma aventura épica em mundo aberto criada por Hidetaka Miyazaki e George R. R. Martin. Desafios intensos e lore profundo.",
-        categoria: "RPG",
+        resumo: "RPG, Soulslike, Fantasia.",
       },
       {
         id: 4,
@@ -44,9 +38,7 @@ const OutrosJogos = (props) => {
         desconto: 40,
         imagem:
           "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
-        descricao:
-          "Viva o Velho Oeste como Arthur Morgan em uma jornada cinematográfica com detalhes incríveis e mundo vivo.",
-        categoria: "Ação e Aventura",
+        resumo: "Ação e Aventura, Mundo Aberto.",
       },
       {
         id: 5,
@@ -55,9 +47,7 @@ const OutrosJogos = (props) => {
         desconto: 10,
         imagem:
           "https://cdn.cloudflare.steamstatic.com/steam/apps/990080/header.jpg",
-        descricao:
-          "Mergulhe no mundo bruxo de Hogwarts no século XIX. Crie seu próprio bruxo e descubra segredos mágicos.",
-        categoria: "RPG de Ação",
+        resumo: "RPG de Ação, Mundo Bruxo.",
       },
       {
         id: 6,
@@ -66,9 +56,7 @@ const OutrosJogos = (props) => {
         desconto: 60,
         imagem:
           "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg",
-        descricao:
-          "Acompanhe Geralt de Rívia em sua busca épica por Ciri. Combate envolvente, escolhas impactantes e um dos melhores RPGs já feitos.",
-        categoria: "RPG",
+        resumo: "RPG, Mundo Aberto, Fantasia.",
       },
       {
         id: 7,
@@ -77,9 +65,7 @@ const OutrosJogos = (props) => {
         desconto: 25,
         imagem:
           "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/header.jpg",
-        descricao:
-          "Kratos retorna em uma jornada emocional com seu filho Atreus. Uma releitura nórdica da lenda do Deus da Guerra.",
-        categoria: "Ação e Aventura",
+        resumo: "Ação e Aventura, Mitologia Nórdica.",
       },
       {
         id: 8,
@@ -88,9 +74,7 @@ const OutrosJogos = (props) => {
         desconto: 15,
         imagem:
           "https://cdn.cloudflare.steamstatic.com/steam/apps/2195250/header.jpg",
-        descricao:
-          "O mais recente simulador de futebol da EA Sports, com gráficos realistas e modo carreira renovado.",
-        categoria: "Esportes",
+        resumo: "Esportes, Futebol Competitivo.",
       },
     ],
     [],
@@ -110,8 +94,7 @@ const OutrosJogos = (props) => {
             preco={item.preco}
             desconto={item.desconto}
             imagem={item.imagem}
-            descricao={item.descricao}
-            categoria={item.categoria}
+            resumo={item.resumo}
             onAddCarrinho={() => props.onAddCarrinho(item)}
           />
         ))}

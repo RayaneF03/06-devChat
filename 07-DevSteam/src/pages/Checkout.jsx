@@ -115,8 +115,9 @@ const Checkout = () => {
                         <img
                           src={item.imagem}
                           alt={item.titulo}
-                          className="img-fluid rounded-3 object-fit-cover"
-                          style={{ height: "100px", width: "100%" }}
+                          className="img-fluid rounded-3 object-fit-cover checkoutThumb"
+                          loading="lazy"
+                          decoding="async"
                         />
                       </div>
                       <div className="col-md-6 col-8">

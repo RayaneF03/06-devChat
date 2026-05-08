@@ -3,25 +3,30 @@ import { GlobalContext } from "../main.jsx";
 
 const GameCard = (props) => {
   const { formatarMoeda } = useContext(GlobalContext);
+  const precoComDesconto = props.preco - (props.preco * props.desconto) / 100;
 
   return (
-    <article className="gameCard d-flex flex-column flex-md-row overflow-hidden">
+    <article className="gameCard d-flex flex-column flex-md-row overflow-hidden rounded-1">
       <img
         className="gameCardImage object-fit-cover"
         src={props.imagem}
         alt={props.titulo}
+        loading="lazy"
+        decoding="async"
+        onError={(e) => {
+          e.currentTarget.src =
+            "https://placehold.co/460x215/2a475e/ffffff?text=Imagem+indisponivel";
+        }}
       />
 
       <div className="gameCardBody d-flex flex-column flex-md-row justify-content-between gap-3 p-3 p-md-4 w-100">
-        <div className="d-flex flex-column">
+        <div className="d-flex flex-column justify-content-between">
           <h3 className="gameCardTitle text-uppercase fw-bold mb-2">
             {props.titulo}
           </h3>
-          <p className="gameCardSubtitle mb-3">
-            {props.categoria}, {props.descricao}
-          </p>
+          <p className="gameCardSubtitle mb-3">{props.resumo}</p>
           <strong className="gameCardPrice text-decoration-underline">
-            {formatarMoeda(props.preco)}
+            {formatarMoeda(precoComDesconto)}
           </strong>
         </div>
 

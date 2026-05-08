@@ -116,22 +116,23 @@ const Promocoes = (props) => {
       <h2 className="text-uppercase text-center text-md-start ms-md-5 ps-md-3 mb-4">
         Promoções
       </h2>
-      <div
-        id="itensPromo"
-        className="d-flex flex-wrap gap-4 justify-content-around"
-      >
+      <div id="itensPromo" className="row g-4 g-xl-5 justify-content-center">
         {/* mapeando um array com react */}
         {aleatorio.map((jogo) => (
-          <PromoCard
+          <div
             key={jogo.id}
-            titulo={jogo.titulo}
-            preco={jogo.preco}
-            precoFormatado={formatarMoeda(jogo.preco)}
-            desconto={jogo.desconto}
-            imagem={jogo.imagem}
-            formatarMoeda={formatarMoeda} // Passando a função para o PromoCard
-            onAddCarrinho={() => props.onAddCarrinho(jogo)}
-          />
+            className="col-12 col-sm-6 col-xl-4 d-flex justify-content-center"
+          >
+            <PromoCard
+              titulo={jogo.titulo}
+              preco={jogo.preco}
+              precoFormatado={formatarMoeda(jogo.preco)}
+              desconto={jogo.desconto}
+              imagem={jogo.imagem}
+              formatarMoeda={formatarMoeda} // Passando a função para o PromoCard
+              onAddCarrinho={() => props.onAddCarrinho(jogo)}
+            />
+          </div>
         ))}
       </div>
     </div>
