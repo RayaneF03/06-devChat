@@ -171,7 +171,8 @@ const Checkout = () => {
                               </small>
                               <span className="fw-bold text-danger fs-5">
                                 {formatarMoeda(
-                                  item.preco - (item.preco * item.desconto) / 100,
+                                  item.preco -
+                                    (item.preco * item.desconto) / 100,
                                 )}
                               </span>
                             </div>
@@ -258,7 +259,9 @@ const Checkout = () => {
               {cupomAplicado && (
                 <div className="d-flex justify-content-between mb-2 mt-2">
                   <span className="text-success">Desconto (10%)</span>
-                  <span className="text-success">-{formatarMoeda(descontoCupom)}</span>
+                  <span className="text-success">
+                    -{formatarMoeda(descontoCupom)}
+                  </span>
                 </div>
               )}
 
