@@ -8,6 +8,6 @@ export const formatarMoeda = (valor) => {
     style: "currency",
     currency: "BRL",
   });
-}
+};
 
-export default formatarMoeda
+export default formatarMoeda;
