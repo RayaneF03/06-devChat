@@ -9,7 +9,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import App from "./App.jsx";
 import Login from "./pages/Login.jsx";
 import Checkout from "./pages/Checkout.jsx";
-import { formatarMoeda } from "./utils/formatters.js";
+import { formatarMoeda } from "../utils/formatar.js";
 
 // Contexto global acessível a todas as rotas
 export const GlobalContext = createContext(null);

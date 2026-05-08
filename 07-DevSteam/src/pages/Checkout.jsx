@@ -21,7 +21,7 @@ const Checkout = () => {
     0,
   );
   const descontoCupom = cupomAplicado ? subtotal * 0.1 : 0;
-  const total = subtotal - descontoCupom;
+  const Total = subtotal - descontoCupom;
 
   // Redireciona se não houver carrinho salvo.
   useEffect(() => {
@@ -166,13 +166,11 @@ const Checkout = () => {
                           <div className="col-6 text-end">
                             <div className="d-flex flex-column">
                               <small className="text-decoration-line-through text-muted">
-                                {formatarMoeda(item.preco)}
+                            {formatarMoeda(item.preco)}
                               </small>
                               <span className="fw-bold text-danger fs-5">
-                                {formatarMoeda(
-                                  item.preco -
-                                    (item.preco * item.desconto) / 100,
-                                )}
+                                formatarMoeda( item.preco - (item.preco *
+                                item.desconto) / 100, )
                               </span>
                             </div>
                           </div>
@@ -247,7 +245,7 @@ const Checkout = () => {
                   Subtotal ({carrinho.length}{" "}
                   {carrinho.length === 1 ? "item" : "itens"})
                 </span>
-                <span>{formatarMoeda(subtotal)}</span>
+                <span> formatarMoeda(subtotal)</span>
               </div>
               <div className="d-flex justify-content-between mb-2">
                 <span>Frete</span>
@@ -259,7 +257,7 @@ const Checkout = () => {
                 <div className="d-flex justify-content-between mb-2 mt-2">
                   <span className="text-success">Desconto (10%)</span>
                   <span className="text-success">
-                    -{formatarMoeda(descontoCupom)}
+                    - formatarMoeda(descontoCupom)
                   </span>
                 </div>
               )}
@@ -269,8 +267,8 @@ const Checkout = () => {
 
               {/* Total final da compra. */}
               <div className="d-flex justify-content-between mb-4">
-                <span className="fw-bold">Total</span>
-                <span className="fw-bold fs-4">{formatarMoeda(total)}</span>
+                <span className="fw-bold">{Total}</span>
+                <span className="fw-bold fs-4"> formatarMoeda(total)</span>
               </div>
 
               {/* Botões de ação. */}

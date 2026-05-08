@@ -1,10 +1,13 @@
-/** formatar um valor numerico para moeda brasileira, se for dolar canadense por exemplo. */
-/*@param {number} valor - 0 a ser formatado
-@return {string} - 0 valor formatado no padrao real*/
-
-export const formatar = (valor) => {
-  return valor.toLocalString("pt-BR", {
+/**
+ * Formata um valor numérico para moeda brasileira (R$)
+ * @param {number} valor - O valor a ser formatado
+ * @returns {string} - O valor formatado no padrão monetário brasileiro
+ */
+export const formatarMoeda = (valor) => {
+  return valor.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
   });
-};
+}
+
+export default formatarMoeda

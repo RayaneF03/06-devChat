@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router";
 import { GlobalContext } from "../main.jsx";
 
-const CarrinhoOffCanvas = (props) => {
-  // Hook do react-router para navegar entre rotas
+const CarrinhoOff = (props) => {
+    // hook do react-router para navegar
   const navigate = useNavigate();
-  // Função do contexto global para formatar valores monetários
+  // Função do contexto global para formatar os valores monetarios 
   const { formatarMoeda } = useContext(GlobalContext);
 
   // Calcula o total do carrinho considerando desconto por item e quantidade
@@ -22,7 +22,7 @@ const CarrinhoOffCanvas = (props) => {
 
   return (
     <div
-      id="carrinhoOffCanvas"
+      id="CarrinhoOff"
       className="offcanvas offcanvas-end"
       style={{ background: "#364A63" }}
     >
@@ -126,7 +126,7 @@ const CarrinhoOffCanvas = (props) => {
               id="addCarrinho"
               className="btn btn-success desconto text-light border-0 w-100 mt-2 fs-5"
               data-bs-toggle="offcanvas"
-              data-bs-target="#carrinhoOffCanvas"
+              data-bs-target="#CarrinhoOff"
               onClick={goToCheckout}
             >
               Finalizar Compra
@@ -138,4 +138,4 @@ const CarrinhoOffCanvas = (props) => {
   );
 };
 
-export default CarrinhoOffCanvas;
+export default CarrinhoOff;

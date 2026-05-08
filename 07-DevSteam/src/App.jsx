@@ -1,20 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
-import Promocoes from "./components/Promocoes/Promocoes";
-import OutrosJogos from "./components/OutrosJogos/OutrosJogos";
-import Carrinho from "./components/Carrinho/Carrinho";
+import Navbar from "./components/Navbar";
+import Promocoes from "./components/Promocoes";
+import OutrosJogos from "./components/OutrosJogos";
+import Carrinho from "./components/CarrinhoOff";
 function App() {
-  const [carrinhoItem, setCarrinhoItem] = useState([]);
-
-  useEffect(() => {
-    localStorage.setItem("devcarrinho", JSON.stringify(carrinhoItem));
-  }, [carrinhoItem]);
-
-  useEffect(() => {
+  const [CarrinhoItem, setCarrinhoItem] = useState(() => {
     const salvaCarrinho = localStorage.getItem("devcarrinho");
-    salvaCarrinho && setCarrinhoItem(JSON.parse(salvaCarrinho));
-  }, []);
+    return salvaCarrinho ? JSON.parse(salvaCarrinho) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("devcarrinho", JSON.stringify(CarrinhoItem));
+  }, [CarrinhoItem]);
 
   // console.log(localStorage.getItem("devcarrinho"));
 
@@ -51,7 +49,7 @@ function App() {
 
   return (
     <>
-      <Navbar contadorJogos={carrinhoItem.length} />
+      <Navbar contadorJogos={CarrinhoItem.length} />
       <Promocoes
         onAddCarrinho={handleAddCarrinho} //adicionando o click para promoção
       />
@@ -59,7 +57,7 @@ function App() {
       <Carrinho
         onRemoveCarrinho={handleRemoveCarrinho}
         onUpdateCarrinho={handleUpdateCarrinho}
-        carrinhoItem={carrinhoItem}
+        carrinhoItem={CarrinhoItem}
       />
       <OutrosJogos />
     </>
