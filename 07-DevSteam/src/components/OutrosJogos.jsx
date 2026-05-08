@@ -1,7 +1,7 @@
 import React from "react";
 import GameCard from "./GameCard";
 
-const OutrosJogos = () => {
+const OutrosJogos = (props) => {
   const games = React.useMemo(
     () => [
       {
@@ -103,7 +103,17 @@ const OutrosJogos = () => {
       </h2>
       <div id="itensJogos" className="d-flex flex-column ms-md-5 ps-md-3 gap-4">
         {games.map((item) => (
-          <GameCard key={item.id} id={item.id} />
+          <GameCard
+            key={item.id}
+            id={item.id}
+            titulo={item.titulo}
+            preco={item.preco}
+            desconto={item.desconto}
+            imagem={item.imagem}
+            descricao={item.descricao}
+            categoria={item.categoria}
+            onAddCarrinho={() => props.onAddCarrinho(item)}
+          />
         ))}
       </div>
     </div>

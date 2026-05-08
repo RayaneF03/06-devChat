@@ -3,13 +3,13 @@ import { useNavigate } from "react-router";
 import { GlobalContext } from "../main.jsx";
 
 const CarrinhoOff = (props) => {
-    // hook do react-router para navegar
+  // hook do react-router para navegar
   const navigate = useNavigate();
-  // Função do contexto global para formatar os valores monetarios 
+  // Função do contexto global para formatar os valores monetarios
   const { formatarMoeda } = useContext(GlobalContext);
 
   // Calcula o total do carrinho considerando desconto por item e quantidade
-  const total = props.carrinhoItem.reduce(
+  const total = (props.carrinhoItem ?? []).reduce(
     (acc, item) =>
       acc + (item.preco - (item.preco * item.desconto) / 100) * item.quantidade,
     0,
@@ -22,8 +22,9 @@ const CarrinhoOff = (props) => {
 
   return (
     <div
-      id="CarrinhoOff"
+      id="carrinhoOffCanvas"
       className="offcanvas offcanvas-end"
+      tabIndex="-1"
       style={{ background: "#364A63" }}
     >
       <div
@@ -43,13 +44,13 @@ const CarrinhoOff = (props) => {
 
       <div className="offcanvas-body">
         {/* Se não houver itens, mostra mensagem simples */}
-        {props.carrinhoItem.length === 0 ? (
+        {(props.carrinhoItem ?? []).length === 0 ? (
           <p className="text-center text-light">Seu carrinho está vazio.</p>
         ) : (
           <>
             {/* Lista de itens do carrinho */}
             <ul className="list-group list-group-flush">
-              {props.carrinhoItem.map((item) => (
+              {(props.carrinhoItem ?? []).map((item) => (
                 <li
                   key={item.id}
                   className="px-4 py-3 shadow mt-3 d-flex gap-3 rounded "
@@ -125,8 +126,7 @@ const CarrinhoOff = (props) => {
             <button
               id="addCarrinho"
               className="btn btn-success desconto text-light border-0 w-100 mt-2 fs-5"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#CarrinhoOff"
+              data-bs-dismiss="offcanvas"
               onClick={goToCheckout}
             >
               Finalizar Compra
