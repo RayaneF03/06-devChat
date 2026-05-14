@@ -32,8 +32,7 @@ const GameCard = (props) => {
 
         <div className="d-flex align-items-end align-items-md-center">
           <button
-            id="addCarrinho"
-            className="btn desconto text-light border-0 rounded-pill px-4 py-2 fw-bold"
+            className="btn desconto text-light border-0 rounded-pill fw-bold addCarrinhoBtn addCarrinhoBtn--compact"
             onClick={props.onAddCarrinho}
           >
             ADICIONAR AO CARRINHO <i className="bi bi-cart-plus ms-2"></i>

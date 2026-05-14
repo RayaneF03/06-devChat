@@ -1,4 +1,3 @@
-
 const PromoCard = (props) => {
   // Eu calculo o preço com desconto aplicando a porcentagem ao preço passado via props
   const precoComDesconto = props.preco - (props.preco * props.desconto) / 100;
@@ -43,8 +42,7 @@ const PromoCard = (props) => {
 
         {/* Botão que adiciona o item ao carrinho: eu disparo a função passada em props.onAddCarrinho */}
         <button
-          id="addCarrinho"
-          className="btn btn-success desconto text-light w-100 border-0"
+          className="btn btn-success desconto text-light border-0 addCarrinhoBtn addCarrinhoBtn--promo"
           onClick={props.onAddCarrinho}
         >
           <i className="bi bi-cart-plus me-2"></i>

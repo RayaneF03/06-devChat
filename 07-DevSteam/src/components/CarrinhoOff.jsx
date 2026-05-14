@@ -126,8 +126,7 @@ const CarrinhoOff = (props) => {
             </div>
             {/* Botão que fecha o offcanvas (Bootstrap) e navega ao checkout */}
             <button
-              id="addCarrinho"
-              className="btn btn-success desconto text-light border-0 w-100 mt-2 fs-5"
+              className="btn btn-success desconto text-light border-0 w-100 mt-2 fs-5 addCarrinhoBtn addCarrinhoBtn--wide"
               data-bs-dismiss="offcanvas"
               onClick={goToCheckout}
             >

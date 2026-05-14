@@ -100,8 +100,7 @@ const Checkout = () => {
                   <i className="bi bi-cart-x fs-1 text-muted"></i>
                   <p className="mt-3 mb-0">Seu carrinho está vazio.</p>
                   <button
-                    id="addCarrinho"
-                    className="btn btn-success desconto border-0 px-3 py-2 text-light mt-3"
+                    className="btn btn-success desconto border-0 px-3 py-2 text-light mt-3 addCarrinhoBtn addCarrinhoBtn--compact"
                     onClick={() => navigate("/")}
                   >
                     Continuar Comprando
@@ -218,8 +217,7 @@ const Checkout = () => {
                   />
                   {!cupomAplicado ? (
                     <button
-                      id="addCarrinho"
-                      className="btn btn-success desconto text-light border-0"
+                      className="btn btn-success desconto text-light border-0 addCarrinhoBtn addCarrinhoBtn--compact"
                       type="button"
                       onClick={aplicarCupom}
                     >
@@ -277,8 +275,7 @@ const Checkout = () => {
 
               {/* Botões de ação. */}
               <button
-                id="addCarrinho"
-                className="btn btn-success desconto border-0 text-light w-100 py-3 fw-bold"
+                className="btn btn-success desconto border-0 text-light w-100 py-3 fw-bold addCarrinhoBtn addCarrinhoBtn--wide"
                 onClick={handleConfirmar}
                 disabled={carrinho.length === 0}
               >

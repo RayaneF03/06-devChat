@@ -4,7 +4,9 @@
   box-sizing: border-box;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
 }
 
@@ -38,7 +40,9 @@ main {
 .promoCard {
   width: 100%;
   max-width: 320px;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   background: linear-gradient(to bottom, #19587b, #2b87ae);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
 }
@@ -61,21 +65,50 @@ main {
   font-weight: 700;
 }
 
-#addCarrinho {
+.addCarrinhoBtn {
   background-color: #4c6b22;
   border: none;
   color: #fff;
-  transition: all 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-#addCarrinho:hover {
+.addCarrinhoBtn:hover {
   background-color: #547625;
   transform: translateY(-2px);
 }
 
-#addCarrinho:disabled {
+.addCarrinhoBtn:disabled {
   background-color: #4c6b22;
   opacity: 0.6;
+}
+
+.addCarrinhoBtn--compact {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.1;
+}
+
+.addCarrinhoBtn--wide {
+  padding: 0.7rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.1;
+}
+
+.addCarrinhoBtn--promo {
+  align-self: stretch;
+  width: 100%;
+  min-height: 3.2rem;
+  padding: 0.7rem 1.05rem;
+  font-size: 0.92rem;
+  border-radius: 0.75rem;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 /* ===== LOGIN PAGE ===== */
@@ -348,9 +381,21 @@ input.form-control:focus {
     font-size: 0.9rem;
   }
 
-  #addCarrinho {
+  .addCarrinhoBtn--compact {
     padding: 0.4rem 0.8rem !important;
     font-size: 0.85rem;
+  }
+
+  .addCarrinhoBtn--wide {
+    padding: 0.65rem 0.9rem !important;
+    font-size: 0.9rem;
+  }
+
+  .addCarrinhoBtn--promo {
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.86rem;
   }
 }
 
