@@ -19,12 +19,13 @@ const Perfil = () => {
       navigate("/login");
     } else {
       const userData = JSON.parse(salvaUsuario);
-      setUsuario(userData);
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData({
         nome: userData.nome || "",
         bio: userData.bio || "Apaixonado por games!",
         telefone: userData.telefone || "(11) 99999-9999",
       });
+      setUsuario(userData);
     }
   }, [navigate]);
 
