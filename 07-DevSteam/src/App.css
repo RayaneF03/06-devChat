@@ -12,20 +12,35 @@ body,
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: #1b2838;
+  background: #0b1017;
   margin: 0;
   padding: 0;
   color: #fff;
   overflow-x: hidden;
 }
 
-main {
-  flex-grow: 1;
+.home-shell {
+  min-height: 100vh;
+  position: relative;
+}
+
+.home-section {
+  position: relative;
+  z-index: 1;
+  padding: 0.5rem 0 1.5rem;
+}
+
+.home-section--featured {
+  padding-top: 0.75rem;
+}
+
+.home-section--catalog {
+  padding-bottom: 3rem;
 }
 
 .buscar,
 .buscar::placeholder {
-  background-color: #2a475e;
+  background-color: rgba(42, 71, 94, 0.95);
   color: #d7d7d7;
 }
 
@@ -41,20 +56,28 @@ main {
   width: 100%;
   max-width: 320px;
   transition:
-    transform 0.2s,
-    box-shadow 0.2s;
-  background: linear-gradient(to bottom, #19587b, #2b87ae);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  background: linear-gradient(
+    180deg,
+    rgba(30, 43, 60, 0.88) 0%,
+    rgba(18, 27, 39, 0.96) 100%
+  );
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
 }
 
 .promoCard:hover {
   transform: scale(1.03);
-  box-shadow: 0 15px 30px rgba(43, 135, 174, 0.4);
+  box-shadow: 0 20px 44px rgba(43, 135, 174, 0.28);
+  border-color: rgba(43, 135, 174, 0.35);
 }
 
 .desconto {
-  background-color: #4c6b22;
-  color: #beeb14;
+  background: linear-gradient(135deg, #4c6b22 0%, #5f842c 100%);
+  color: #e6ff79;
   font-weight: 700;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -173,15 +196,20 @@ main {
 
 /* ===== GAME CARDS ===== */
 .gameCard {
-  background: #2b87ae;
+  background: linear-gradient(
+    180deg,
+    rgba(33, 47, 64, 0.94) 0%,
+    rgba(20, 29, 41, 0.98) 100%
+  );
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   transition: all 0.3s ease;
   overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
 }
 
 .gameCard:hover {
-  box-shadow: 0 10px 30px rgba(43, 135, 174, 0.3);
+  box-shadow: 0 20px 45px rgba(43, 135, 174, 0.24);
   transform: translateY(-4px);
 }
 
@@ -210,6 +238,11 @@ main {
 
 .gameCardBody {
   min-height: 170px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.01),
+    rgba(255, 255, 255, 0.03)
+  );
 }
 
 .gameCardTitle {
@@ -220,7 +253,7 @@ main {
 }
 
 .gameCardSubtitle {
-  color: #d0d9df;
+  color: #c8d6e2;
   font-size: 1.05rem;
   max-width: 52ch;
 }
@@ -235,6 +268,146 @@ main {
 input.form-control:focus {
   box-shadow: 0 0 0 0.2rem rgba(43, 135, 174, 0.2);
   border-color: #2b87ae;
+}
+
+.navbar {
+  background: #0b1017 !important;
+  backdrop-filter: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.nav-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+}
+
+.nav-search {
+  max-width: 640px;
+  width: 100%;
+}
+
+.nav-search--desktop {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(46vw, 640px);
+  z-index: 1;
+}
+
+.nav-actions {
+  margin-left: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.nav-login-link,
+.nav-cart-btn i,
+.profile-avatar-sm {
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.nav-login-link:hover,
+.nav-cart-btn i:hover,
+.profile-avatar-sm:hover {
+  transform: translateY(-1px);
+}
+
+.profile-avatar-sm {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.nav-cart-btn i {
+  cursor: pointer;
+}
+
+.navbar-brand,
+.navbar .text-light {
+  letter-spacing: 0.02em;
+}
+
+#promotion h2,
+#outrosJogos h2 {
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  font-weight: 800;
+  color: #f3f7fb;
+}
+
+#promotion,
+#outrosJogos {
+  position: relative;
+}
+
+#promotion {
+  padding-top: 0.25rem;
+}
+
+#outrosJogos {
+  padding-top: 0.5rem;
+}
+
+#promotion::before,
+#outrosJogos::before {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2b87ae 0%, #4c6b22 100%);
+  margin: 0 0 1rem 0.2rem;
+}
+
+#itensPromo,
+#itensJogos {
+  backdrop-filter: none;
+}
+
+@media (min-width: 992px) {
+  #promotion,
+  #outrosJogos {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+
+  .nav-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .nav-search--desktop {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
+
+  #carrinho {
+    gap: 0.85rem !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar-brand {
+    font-size: 1.2rem !important;
+  }
+
+  .nav-cart-btn i {
+    font-size: 1.7rem !important;
+  }
 }
 
 /* ===== RESPONSIVIDADE ===== */

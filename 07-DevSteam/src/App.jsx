@@ -48,19 +48,25 @@ function App() {
   };
 
   return (
-    <>
+    <main className="home-shell">
       <Navbar contadorJogos={CarrinhoItem.length} />
-      <Promocoes
-        onAddCarrinho={handleAddCarrinho} //adicionando o click para promoção
-      />
+
+      <section className="home-section home-section--featured">
+        <Promocoes
+          onAddCarrinho={handleAddCarrinho} //adicionando o click para promoção
+        />
+      </section>
 
       <Carrinho
         onRemoveCarrinho={handleRemoveCarrinho}
         onUpdateCarrinho={handleUpdateCarrinho}
         carrinhoItem={CarrinhoItem}
       />
-      <OutrosJogos onAddCarrinho={handleAddCarrinho} />
-    </>
+
+      <section className="home-section home-section--catalog">
+        <OutrosJogos onAddCarrinho={handleAddCarrinho} />
+      </section>
+    </main>
   );
 }
 
